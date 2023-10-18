@@ -1,0 +1,27 @@
+name: auropay_payments_sandbox
+description: AuroPay Payments Flutter SDK/plugin allows you to accept in-app payments by providing you with the building blocks you need, to create a checkout experience for iOS and Android SDK.
+version: 1.0.0
+homepage: https://github.com/Auropay/flutter_auropay_payments_sandbox
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+  flutter: '>=3.3.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: net.auropay.auropay_payments_sandbox
+        pluginClass: AuropayPaymentsSandboxPlugin
+      ios:
+        pluginClass: AuropayPaymentsSandboxPlugin
