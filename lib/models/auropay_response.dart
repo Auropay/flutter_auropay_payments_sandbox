@@ -58,7 +58,13 @@ class AuropayResponse {
 
   @override
   bool operator ==(Object other) {
-    return (other as AuropayResponse).type == type && other.data == data;
+    if (identical(this, other)) {
+      return true;
+    }
+    if (other.runtimeType != runtimeType) {
+      return false;
+    }
+    return other is AuropayResponse && other.type == type && other.data == data;
   }
 
   @override
@@ -93,7 +99,14 @@ class SuccessData implements Data {
 
   @override
   bool operator ==(Object other) {
-    return (other as SuccessData).transactionStatus == transactionStatus &&
+    if (identical(this, other)) {
+      return true;
+    }
+    if (other.runtimeType != runtimeType) {
+      return false;
+    }
+    return other is SuccessData &&
+        other.transactionStatus == transactionStatus &&
         other.transactionId == transactionId &&
         other.orderId == orderId;
   }
@@ -121,7 +134,13 @@ class FailureData implements Data {
 
   @override
   bool operator ==(Object other) {
-    return (other as FailureData).message == message && other.errorCode != null
+    if (identical(this, other)) {
+      return true;
+    }
+    if (other.runtimeType != runtimeType) {
+      return false;
+    }
+    return other is FailureData && other.message == message && other.errorCode != null
         ? other.errorCode == errorCode
         : true;
   }
@@ -178,7 +197,14 @@ class SuccessDetail implements Data {
 
   @override
   bool operator ==(Object other) {
-    return (other as SuccessDetail).orderId == orderId &&
+    if (identical(this, other)) {
+      return true;
+    }
+    if (other.runtimeType != runtimeType) {
+      return false;
+    }
+    return other is SuccessDetail &&
+        other.orderId == orderId &&
         other.transactionStatus == transactionStatus &&
         other.transactionId == transactionId &&
         other.transactionDate == transactionDate &&

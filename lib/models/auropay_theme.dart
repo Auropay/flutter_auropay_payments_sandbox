@@ -27,7 +27,14 @@ class AuropayTheme {
 
   @override
   bool operator ==(Object other) {
-    return (other as AuropayTheme).primaryColor == primaryColor &&
+    if (identical(this, other)) {
+      return true;
+    }
+    if (other.runtimeType != runtimeType) {
+      return false;
+    }
+    return other is AuropayTheme &&
+        other.primaryColor == primaryColor &&
         other.colorOnPrimary == colorOnPrimary &&
         other.secondaryColor == secondaryColor &&
         other.colorOnSecondary == colorOnSecondary;
