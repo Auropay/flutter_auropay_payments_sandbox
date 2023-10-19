@@ -17,3 +17,7 @@
 
 - Meets PCI guidelines.
 - Meets OWASP security guidelines for mobile devices.
+
+## 1.0.0
+
+- Minor bug fix.
