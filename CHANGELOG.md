@@ -25,3 +25,7 @@
 ## 1.0.2
 
 - Minor bug fix.
+
+## 1.0.3
+
+- Minor bug fix in README.md.
