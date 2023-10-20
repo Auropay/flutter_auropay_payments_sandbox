@@ -12,8 +12,8 @@ class SimpleApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme:
-          ThemeData(colorScheme: ColorScheme.fromSwatch().copyWith(primary: Colors.blue)),
+      theme: ThemeData(
+          colorScheme: ColorScheme.fromSwatch().copyWith(primary: Colors.blue)),
       home: const SimpleView(),
     );
   }
@@ -53,10 +53,10 @@ class _SimpleViewState extends State<SimpleView> {
 
     // prepare builder with required information
     final builder = AuropayBuilder(
-        subDomainId: keys.merchantId, // your merchant domain name
-        accessKey: keys.accessKey, // your access key
-        secretKey: keys.secretKey, // your secret key
-        customerProfile: customerProfile)
+            subDomainId: keys.merchantId, // your merchant domain name
+            accessKey: keys.accessKey, // your access key
+            secretKey: keys.secretKey, // your secret key
+            customerProfile: customerProfile)
         .setAutoContrast(true) // color theme setup for appbar
         .setCountry(Country.IN)
         .setShowReceipt(true)
@@ -66,8 +66,7 @@ class _SimpleViewState extends State<SimpleView> {
 
     try {
       auropayResponse = await _auropay.doPayment(
-          builder: builder,
-          amount: double.parse(amountController.text));
+          builder: builder, amount: double.parse(amountController.text));
       // referenceNumber: "xyz_reference"
       debugPrint("auroPay response :: ${auropayResponse.toString()}");
 
@@ -253,7 +252,8 @@ class _SimpleViewState extends State<SimpleView> {
   }
 
   InputDecoration decoration(String label) {
-    return InputDecoration(border: const OutlineInputBorder(), label: Text(label));
+    return InputDecoration(
+        border: const OutlineInputBorder(), label: Text(label));
   }
 }
 

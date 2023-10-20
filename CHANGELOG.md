@@ -21,3 +21,7 @@
 ## 1.0.1
 
 - Minor bug fix.
+
+## 1.0.2
+
+- Minor bug fix.

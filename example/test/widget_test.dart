@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'app_setup.dart';
 
 void main() {
-
   final amount = find.byKey(const ValueKey('tff_mount'));
   final firstname = find.byKey(const ValueKey('tff_firstname'));
   final lastname = find.byKey(const ValueKey('tff_lastname'));

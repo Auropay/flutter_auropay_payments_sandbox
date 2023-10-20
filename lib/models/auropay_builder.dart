@@ -46,7 +46,6 @@ class AuropayBuilder {
   /// true: will return detailed response on success payment.
   bool detailedResponse = false;
 
-
   /// ask for customer detail
   ///
   /// true: will show a form for customer detail
@@ -88,7 +87,6 @@ class AuropayBuilder {
     this.detailedResponse = detailedResponse;
     return this;
   }
-
 
   AuropayBuilder askForCustomerDetail(bool showCustomerForm) {
     this.showCustomerForm = showCustomerForm;

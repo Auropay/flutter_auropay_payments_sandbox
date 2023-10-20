@@ -16,28 +16,26 @@ void main() {
             phone: '9081234567',
             email: 'vishal@yopmail.com'));
 
-
-    expect(builder.toJson(10),
-        {
-          "subDomainId": "test",
-          "accessKey": "key890",
-          "secretKey": "key890",
-          "amount": 10,
-          "customerProfile": {
-            "title": "aurionpro",
-            "firstName": "Vishal",
-            "middleName": "",
-            "lastName": "Golakiya",
-            "phone": "9081234567",
-            "email": "vishal@yopmail.com"
-          },
-          "autoContrast": true,
-          "showReceipt": true,
-          "country": "in",
-          "allowCardScan": false,
-          "detailedResponse": false,
-          "showCustomerForm": false
-        });
+    expect(builder.toJson(10), {
+      "subDomainId": "test",
+      "accessKey": "key890",
+      "secretKey": "key890",
+      "amount": 10,
+      "customerProfile": {
+        "title": "aurionpro",
+        "firstName": "Vishal",
+        "middleName": "",
+        "lastName": "Golakiya",
+        "phone": "9081234567",
+        "email": "vishal@yopmail.com"
+      },
+      "autoContrast": true,
+      "showReceipt": true,
+      "country": "in",
+      "allowCardScan": false,
+      "detailedResponse": false,
+      "showCustomerForm": false
+    });
   });
 
   test('auropay builder toJson test', () {
@@ -60,26 +58,25 @@ void main() {
     builder.getDetailedResponse(true);
     builder.setAllowCardScan(true);
 
-    expect(builder.toJson(10),
-        {
-          "subDomainId": "test",
-          "accessKey": "key890",
-          "secretKey": "key890",
-          "amount": 10,
-          "customerProfile": {
-            "title": "aurionpro",
-            "firstName": "Vishal",
-            "middleName": "",
-            "lastName": "Golakiya",
-            "phone": "9081234567",
-            "email": "vishal@yopmail.com"
-          },
-          "autoContrast": false,
-          "showReceipt": false,
-          "country": "us",
-          "allowCardScan": true,
-          "detailedResponse": true,
-          "showCustomerForm": true
-        });
+    expect(builder.toJson(10), {
+      "subDomainId": "test",
+      "accessKey": "key890",
+      "secretKey": "key890",
+      "amount": 10,
+      "customerProfile": {
+        "title": "aurionpro",
+        "firstName": "Vishal",
+        "middleName": "",
+        "lastName": "Golakiya",
+        "phone": "9081234567",
+        "email": "vishal@yopmail.com"
+      },
+      "autoContrast": false,
+      "showReceipt": false,
+      "country": "us",
+      "allowCardScan": true,
+      "detailedResponse": true,
+      "showCustomerForm": true
+    });
   });
 }

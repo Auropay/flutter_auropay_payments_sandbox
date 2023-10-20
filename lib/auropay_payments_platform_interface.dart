@@ -28,10 +28,10 @@ abstract class AuropayPaymentsPlatform extends PlatformInterface {
   /// @param [AuropayBuilder]
   ///
   /// initiate payment with platform specific chanel and required data
-  Future<Map<dynamic, dynamic>?> doPayment({
-    required AuropayBuilder builder,
-    required double amount,
-    String? referenceNumber}) {
+  Future<Map<dynamic, dynamic>?> doPayment(
+      {required AuropayBuilder builder,
+      required double amount,
+      String? referenceNumber}) {
     throw UnimplementedError('Auropay has been not initialized.');
   }
 }
