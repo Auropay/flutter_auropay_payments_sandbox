@@ -144,7 +144,9 @@ class FailureData implements Data {
     if (other.runtimeType != runtimeType) {
       return false;
     }
-    return other is FailureData && other.message == message && other.errorCode != null
+    return other is FailureData &&
+            other.message == message &&
+            other.errorCode != null
         ? other.errorCode == errorCode
         : true;
   }
