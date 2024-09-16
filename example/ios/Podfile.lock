@@ -1,7 +1,7 @@
 PODS:
-  - auropay-payments-sandbox (1.1.0)
+  - auropay-payments-sandbox (1.1.1)
   - auropay_payments_sandbox (0.0.1):
-    - auropay-payments-sandbox (= 1.1.0)
+    - auropay-payments-sandbox (= 1.1.1)
     - Flutter
   - Flutter (1.0.0)
   - integration_test (0.0.1):
@@ -25,11 +25,11 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/integration_test/ios"
 
 SPEC CHECKSUMS:
-  auropay-payments-sandbox: f894e6268a2b335d47feb9ab2b4dd9e120356db5
-  auropay_payments_sandbox: bc2cb4141de55c2eb815eb9b884132809510b222
-  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  auropay-payments-sandbox: 47e5d55026e576d454e42f70e8179a64c94a33d2
+  auropay_payments_sandbox: 099d6693de9addc4243376bd388d84bbbcb308f5
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   integration_test: 13825b8a9334a850581300559b8839134b124670
 
-PODFILE CHECKSUM: 70d9d25280d0dd177a5f637cdb0f0b0b12c6a189
+PODFILE CHECKSUM: 819463e6a0290f5a72f145ba7cde16e8b6ef0796
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.15.2

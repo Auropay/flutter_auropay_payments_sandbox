@@ -1,8 +1,10 @@
 import 'package:auropay_payments_sandbox/auropay_payments.dart';
 import 'package:auropay_payments_sandbox/models/auropay_builder.dart';
 import 'package:auropay_payments_sandbox/models/auropay_response.dart';
-import 'package:auropay_payments_sandbox/models/country_enum.dart';
 import 'package:flutter/material.dart';
+
+// remove blow line or
+// create your own keys.dart file for merchantID, accessKey and secretKey
 import 'package:auropay_payments_sandbox_example/keys.dart' as keys;
 
 class SimpleApp extends StatelessWidget {
@@ -13,6 +15,7 @@ class SimpleApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+          useMaterial3: false,
           colorScheme: ColorScheme.fromSwatch().copyWith(primary: Colors.blue)),
       home: const SimpleView(),
     );
@@ -40,6 +43,7 @@ class _SimpleViewState extends State<SimpleView> {
   final emailFocus = FocusNode();
   final phoneFocus = FocusNode();
 
+  // Step 1: Initialise Auropay
   final _auropay = AuropayPayments();
   bool _isShowLoader = false;
   PaymentStatus _paymentStatus = PaymentStatus.init;
@@ -51,20 +55,22 @@ class _SimpleViewState extends State<SimpleView> {
       _isShowLoader = true;
     });
 
-    // prepare builder with required information
+    // Step 2: prepare builder with required information
     final builder = AuropayBuilder(
-            subDomainId: keys.merchantId, // your merchant domain name
-            accessKey: keys.accessKey, // your access key
-            secretKey: keys.secretKey, // your secret key
+            // your merchant domain name from auropay merchant portal
+            subDomainId: keys.merchantId,
+            // your access key from auropay merchant portal
+            accessKey: keys.accessKey,
+            // your secret key from auropay merchant portal
+            secretKey: keys.secretKey,
             customerProfile: customerProfile)
-        .setAutoContrast(true) // color theme setup for appbar
-        .setCountry(Country.IN)
-        .setShowReceipt(true)
-        .askForCustomerDetail(false)
-        .getDetailedResponse(false)
+        .setShowReceipt(true) // default true
+        .askForCustomerDetail(false) // default false
+        .getDetailedResponse(false) // default false
         .build();
 
     try {
+      // Step 3: Call doPayment
       auropayResponse = await _auropay.doPayment(
           builder: builder, amount: double.parse(amountController.text));
       // referenceNumber: "xyz_reference"
@@ -76,14 +82,22 @@ class _SimpleViewState extends State<SimpleView> {
             : PaymentStatus.failed;
         _isShowLoader = false;
 
+        // Step 4: Handle response
         String? message;
         if (auropayResponse?.data is FailureData) {
           FailureData data = auropayResponse?.data as FailureData;
           message = 'Payment Failed:\n${data.message}';
         }
 
+        // when getDetailedResponse == false
         if (auropayResponse?.data is SuccessData) {
           SuccessData data = auropayResponse?.data as SuccessData;
+          message = 'Payment Success\nTransaction Id: ${data.transactionId}';
+        }
+
+        // when getDetailedResponse == true
+        if (auropayResponse?.data is SuccessDetail) {
+          SuccessDetail data = auropayResponse?.data as SuccessDetail;
           message = 'Payment Success\nTransaction Id: ${data.transactionId}';
         }
 
@@ -202,9 +216,7 @@ class _SimpleViewState extends State<SimpleView> {
                   if (value == null || value.trim().isEmpty) {
                     return 'Please enter phone number';
                   }
-                  if (value.trim().isEmpty ||
-                      value.trim().length < 10 ||
-                      value.trim().length > 13) {
+                  if (value.trim().isEmpty || value.trim().length != 10) {
                     return 'Please enter valid phone number';
                   }
                   return null;
