@@ -29,3 +29,7 @@
 ## 1.0.3
 
 - Minor bug fix in README.md.
+
+## 1.0.4
+
+- Enable SDK support for multiple countries.
