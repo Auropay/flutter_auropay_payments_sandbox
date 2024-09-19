@@ -33,3 +33,7 @@
 ## 1.0.4
 
 - Enable SDK support for multiple countries.
+
+## 1.0.5
+
+- iOS SDK improvements.
