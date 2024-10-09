@@ -58,11 +58,11 @@ class _SimpleViewState extends State<SimpleView> {
     // Step 2: prepare builder with required information
     final builder = AuropayBuilder(
             // your merchant domain name from auropay merchant portal
-            subDomainId: keys.merchantId,
+            subDomainId: keys.yourSubDomainId,
             // your access key from auropay merchant portal
-            accessKey: keys.accessKey,
+            accessKey: keys.yourAccessKey,
             // your secret key from auropay merchant portal
-            secretKey: keys.secretKey,
+            secretKey: keys.yourSecretKey,
             customerProfile: customerProfile)
         .setShowReceipt(true) // default true
         .askForCustomerDetail(false) // default false
