@@ -37,3 +37,7 @@
 ## 1.0.5
 
 - iOS SDK improvements.
+
+## 1.0.6
+
+- Fix the mobile number issue in android.
