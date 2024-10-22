@@ -39,7 +39,7 @@ public class AuropayPaymentsSandboxPlugin: NSObject, FlutterPlugin {
                 if let customer = args["customerProfile"] as? [String:Any]{
                     
                     builder = AuroPayBuilder()
-                        .merchantID(merchantId)
+                        .subDomainId(merchantId)
                         .accessKey(accessKey)
                         .secretKey(secretKey)
                         .customerProfile(getCustomerProfile(customer: customer))

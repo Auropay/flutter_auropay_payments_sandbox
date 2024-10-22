@@ -46,19 +46,15 @@ class AuropayResponse {
     return json['type'] == 'success'
         ? (json['data'] as Map<dynamic, dynamic>).containsKey('referenceNo')
             ? AuropayResponse(
-                type: ResponseType.success,
-                data: SuccessDetail.fromJson(json['data']))
+                type: ResponseType.success, data: SuccessDetail.fromJson(json['data']))
             : AuropayResponse(
-                type: ResponseType.success,
-                data: SuccessData.fromJson(json['data']))
+                type: ResponseType.success, data: SuccessData.fromJson(json['data']))
         : AuropayResponse(
-            type: ResponseType.failed,
-            data: FailureData.fromJson(json['data']));
+            type: ResponseType.failed, data: FailureData.fromJson(json['data']));
   }
 
   @override
-  String toString() =>
-      'AuropayResponse { type: ${type.name}, ${data.toString()} }';
+  String toString() => 'AuropayResponse { type: ${type.name}, ${data.toString()} }';
 
   @override
   bool operator ==(Object other) {
