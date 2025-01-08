@@ -45,3 +45,7 @@
 ## 1.0.7
 
 - Update Android and iOS SDK
+
+## 1.0.8
+
+- Removed full card number from convenience fee api.
