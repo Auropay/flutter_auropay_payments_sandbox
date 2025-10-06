@@ -1,21 +1,3 @@
-buildscript {
-    ext.kotlin_version = '1.7.10'
-    repositories {
-        maven {
-            url 'https://storage.googleapis.com/r8-releases/raw'
-        }
-        google()
-        mavenCentral()
-    }
-
-    dependencies {
-//        classpath 'com.android.tools.build:gradle:7.3.0'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'com.android.tools:r8:8.2.16-dev'
-        classpath 'com.android.tools.build:gradle:8.1.0'
-    }
-}
-
 allprojects {
     repositories {
         maven {

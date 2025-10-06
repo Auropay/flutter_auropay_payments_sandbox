@@ -49,3 +49,7 @@
 ## 1.0.8
 
 - Removed full card number from convenience fee api.
+
+## 1.0.9
+
+- Performance improvements and bug fixes.

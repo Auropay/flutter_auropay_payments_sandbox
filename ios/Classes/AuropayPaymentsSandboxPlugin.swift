@@ -149,18 +149,18 @@ public class AuropayPaymentsSandboxPlugin: NSObject, FlutterPlugin {
     
     extension AuropayPaymentsSandboxPlugin: APPaymentCompletionProtocolWithData{
         public func onPaymentSuccess(_ paymentData: PaymentResultData) {
-            let data = ["transactionStatus": 2,
+            let data = ["transactionStatus": paymentData.transactionStatus,
                         "orderId": paymentData.orderId,
                         "transactionId": paymentData.transactionId,
-                        "transactionDate": "paymentData.transactionDate",
-                        "referenceNo": "paymentData.referenceNo",
-                        "processMethod": 3,
-                        "reasonMessage":" paymentData.reasonMessage",
-                        "amount": 12.2,
-                        "convenienceFee": 12.2,
-                        "taxAmount": 3.3,
-                        "discountAmount": 5.5,
-                        "captureAmount": 2.2
+                        "transactionDate": paymentData.transactionDate,
+                        "referenceNo": paymentData.referenceNo,
+                        "processMethod": paymentData.processMethod,
+                        "reasonMessage":paymentData.reasonMessage,
+                        "amount": paymentData.amount,
+                        "convenienceFee": paymentData.convenienceFee,
+                        "taxAmount": paymentData.taxAmount,
+                        "discountAmount": paymentData.discountAmount,
+                        "captureAmount": paymentData.captureAmount
             ] as [String: Any]
             let resp = ["type": "success", "data": data] as [String: Any]
             self.result?(resp)
