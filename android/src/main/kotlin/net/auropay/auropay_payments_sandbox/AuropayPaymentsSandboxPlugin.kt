@@ -107,9 +107,10 @@ class AuropayPaymentsSandboxPlugin : FlutterPlugin, MethodCallHandler, ActivityA
                     auropay.doPayment(
                         activityContext,
                         options["amount"] as Double,
-                        referenceNumber = referenceNumber,
-                        askCustomerDetails = options["showCustomerForm"] as Boolean,
-                        onPaymentResultWithDataListener = object : PaymentResultWithDataListener {
+                        referenceNumber,
+                        options["showCustomerForm"] as Boolean,
+                        null,
+                        object: PaymentResultWithDataListener {
                             override fun onSuccess(paymentData: PaymentResultData) {
                                 result.success(
                                     mapOf(
@@ -149,9 +150,9 @@ class AuropayPaymentsSandboxPlugin : FlutterPlugin, MethodCallHandler, ActivityA
                     auropay.doPayment(
                         activityContext,
                         options["amount"] as Double,
-                        referenceNumber = referenceNumber,
-                        askCustomerDetails = options["showCustomerForm"] as Boolean,
-                        onPaymentResultListener = object : PaymentResultListener {
+                        referenceNumber,
+                        options["showCustomerForm"] as Boolean,
+                        object : PaymentResultListener {
                             override fun onSuccess(
                                 orderId: String,
                                 transactionStatus: Int,
@@ -182,15 +183,18 @@ class AuropayPaymentsSandboxPlugin : FlutterPlugin, MethodCallHandler, ActivityA
                                     )
                                 )
                             }
-                        })
+                        },
+                        null)
                 }
             } else {
                 if (options["detailedResponse"] as Boolean) {
                     auropay.doPayment(
                         activityContext,
                         options["amount"] as Double,
-                        askCustomerDetails = options["showCustomerForm"] as Boolean,
-                        onPaymentResultWithDataListener = object : PaymentResultWithDataListener {
+                        null,
+                        options["showCustomerForm"] as Boolean,
+                        null,
+                        object : PaymentResultWithDataListener {
                             override fun onSuccess(paymentData: PaymentResultData) {
                                 result.success(
                                     mapOf(
@@ -231,8 +235,9 @@ class AuropayPaymentsSandboxPlugin : FlutterPlugin, MethodCallHandler, ActivityA
                     auropay.doPayment(
                         activityContext,
                         options["amount"] as Double,
-                        askCustomerDetails = options["showCustomerForm"] as Boolean,
-                        onPaymentResultListener = object : PaymentResultListener {
+                        null,
+                        options["showCustomerForm"] as Boolean,
+                        object : PaymentResultListener {
                             override fun onSuccess(
                                 orderId: String,
                                 transactionStatus: Int,
@@ -262,7 +267,8 @@ class AuropayPaymentsSandboxPlugin : FlutterPlugin, MethodCallHandler, ActivityA
                                     )
                                 )
                             }
-                        })
+                        },
+                        null)
                 }
             }
 

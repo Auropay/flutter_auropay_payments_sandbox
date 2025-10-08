@@ -53,3 +53,7 @@
 ## 1.0.9
 
 - Performance improvements and bug fixes.
+
+## 1.1.0
+
+- Update error handling of transaction.
