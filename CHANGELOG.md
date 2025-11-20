@@ -57,3 +57,8 @@
 ## 1.1.0
 
 - Update error handling of transaction.
+
+## 1.1.1
+
+- Added support for UPI intent payment flow on only iOS.
+- Performance improvement and bug fixes.
