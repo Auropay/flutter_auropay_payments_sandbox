@@ -81,5 +81,5 @@ android {
 }
 
 dependencies {
-    implementation 'net.auropay:sandbox-payments-android:1.2.6'
+    implementation 'net.auropay:sandbox-payments-android:1.2.7'
 }

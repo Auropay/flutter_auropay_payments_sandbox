@@ -30,10 +30,16 @@ Note: for Android, it is required to add internet permission in the manifest fil
     <uses-permission android:name="android.permission.INTERNET"/> 
 ```
 
-For iOS add camera permission in info.plist file
+For iOS add camera permission and upi intent list in info.plist file
 ```xml
     <key>NSCameraUsageDescription</key>
     <string>Needs access to your camera to scan your card.</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>phonepe</string>
+        <string>tez</string>
+        <string>paytmmp</string>
+    </array>
 ```
 
 

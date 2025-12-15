@@ -62,3 +62,7 @@
 
 - Added support for UPI intent payment flow on only iOS.
 - Performance improvement and bug fixes.
+
+## 1.1.2
+
+- Add UPI intent support.
