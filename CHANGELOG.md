@@ -66,3 +66,7 @@
 ## 1.1.2
 
 - Add UPI intent support.
+
+## 1.1.3
+
+- Performance improvement and bug fixes.

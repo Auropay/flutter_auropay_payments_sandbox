@@ -66,15 +66,16 @@ class _SimpleViewState extends State<SimpleView> {
             customerProfile: customerProfile)
         .setShowReceipt(true) // default true
         .askForCustomerDetail(false) // default false
-        .getDetailedResponse(false) // default false
+        .getDetailedResponse(true) // default false
         .build();
 
     try {
       // Step 3: Call doPayment
       auropayResponse = await _auropay.doPayment(
         builder: builder,
+          referenceNumber: "xyz_reference_v123",
         amount: double.parse(
-            amountController.text), /*referenceNumber: "xyz_reference_1"*/
+            amountController.text),
       );
       debugPrint("auroPay response :: ${auropayResponse.toString()}");
 
@@ -103,6 +104,21 @@ class _SimpleViewState extends State<SimpleView> {
           message = 'Payment Success\nTransaction Id: ${data.transactionId}';
         }
 
+        final detail = auropayResponse?.data as SuccessDetail;
+        print('''auroPay response ::         
+orderId: ${detail.orderId}
+transactionStatus: ${detail.transactionStatus}
+transactionId: ${detail.transactionId}
+transactionDate: ${detail.transactionDate}
+referenceNo: ${detail.referenceNo}
+processMethod: ${detail.processMethod}
+reasonMessage: ${detail.reasonMessage}
+amount: ${detail.amount}
+convenienceFee: ${detail.convenienceFee}
+taxAmount: ${detail.taxAmount}
+discountAmount: ${detail.discountAmount}
+captureAmount: ${detail.captureAmount} 
+        ''');
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             content: Text(_paymentStatus == PaymentStatus.success
                 ? message ?? 'Payment Success'

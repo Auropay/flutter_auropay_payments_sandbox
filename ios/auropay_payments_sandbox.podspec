@@ -15,7 +15,7 @@ A Auropay sandbox sdk.
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.dependency 'auropay-payments-sandbox', '1.2.3'
+  s.dependency 'auropay-payments-sandbox', '1.2.4'
   s.xcconfig = { 'ENABLE_BITCODE' => 'NO', }
   s.platform = :ios, '13.0'
 
