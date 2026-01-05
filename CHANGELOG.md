@@ -70,3 +70,7 @@
 ## 1.1.3
 
 - Performance improvement and bug fixes.
+
+## 1.1.4
+
+- Performance improvement and bug fixes.
