@@ -74,3 +74,8 @@
 ## 1.1.4
 
 - Performance improvement and bug fixes.
+
+## 1.1.5
+
+- Add custom OTP flow
+- Performance improvement and bug fixes.
