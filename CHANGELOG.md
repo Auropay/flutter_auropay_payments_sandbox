@@ -79,3 +79,8 @@
 
 - Add custom OTP flow
 - Performance improvement and bug fixes.
+
+## 1.3.0
+
+- Add CRED and BHIM UPI app support
+- Performance improvement and bug fixes.

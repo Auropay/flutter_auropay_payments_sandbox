@@ -50,6 +50,8 @@
         <string>phonepe</string>
         <string>tez</string>
         <string>paytmmp</string>
+        <string>credpay</string>
+        <string>bhim</string>
     </array>
 </dict>
 </plist>

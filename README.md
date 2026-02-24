@@ -39,6 +39,8 @@ For iOS add camera permission and upi intent list in info.plist file
         <string>phonepe</string>
         <string>tez</string>
         <string>paytmmp</string>
+        <string>credpay</string>
+        <string>bhim</string>
     </array>
 ```
 
