@@ -84,3 +84,7 @@
 
 - Add CRED and BHIM UPI app support
 - Performance improvement and bug fixes.
+
+## 1.3.1
+
+- Remove BHIM UPI app support
